@@ -1,0 +1,219 @@
+.projet {
+  padding: 6rem 10%;
+  background: #07071a;
+  position: relative;
+  overflow: hidden;
+}
+
+.projet__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.projet__header {
+  max-width: 100%;
+  margin-bottom: 3.5rem;
+}
+
+.projet__tag {
+  display: inline-block;
+  font-family: monospace;
+  letter-spacing: 1.8px;
+  font-size: 0.8rem;
+  color: rgba(100, 108, 255, 0.9);
+  margin-bottom: 0.75rem;
+}
+
+.projet__title {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 900;
+  color: #fff;
+  margin: 0;
+  letter-spacing: -1px;
+}
+
+.projet__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  margin-top: 2rem;
+}
+
+.projet__subtitle {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.75;
+  max-width: 380px;
+  flex-shrink: 0;
+}
+
+.projet__stat {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.9rem 1.6rem;
+  background: linear-gradient(135deg, rgba(100, 108, 255, 0.12), rgba(168, 85, 247, 0.1));
+  border: 1px solid rgba(100, 108, 255, 0.25);
+  border-radius: 12px;
+  white-space: nowrap;
+  animation: slideInUp 0.8s 0.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.projet__stat-icon {
+  font-size: 1.5rem;
+  display: inline-block;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.projet__stat-text {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+  font-weight: 500;
+}
+
+.projet__stat-highlight {
+  background: linear-gradient(90deg, rgba(100, 108, 255, 1), rgba(168, 85, 247, 1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+.projet__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.projet__card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+
+.projet__card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(100, 108, 255, 0.3);
+  background: rgba(100, 108, 255, 0.06);
+}
+
+.projet__media {
+  width: 100%;
+  height: 180px;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.projet__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.projet__media--placeholder {
+  background: radial-gradient(circle at top, rgba(100, 108, 255, 0.2), transparent 55%);
+}
+
+.projet__body {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.projet__name {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #fff;
+  margin: 0;
+}
+
+.projet__desc {
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.68);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.projet__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.projet__tagitem {
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(100, 108, 255, 0.2);
+  background: rgba(100, 108, 255, 0.07);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.projet__actions {
+  margin-top: auto;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.projet__btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.projet__btn:hover {
+  transform: translateY(-1px);
+}
+
+.projet__btn--primary {
+  background: linear-gradient(135deg, rgba(100, 108, 255, 0.9), rgba(168, 85, 247, 0.9));
+  border-color: rgba(100, 108, 255, 0.9);
+  color: #07071a;
+}
+
+.projet__btn--outline {
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.projet__btn--outline:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(168, 85, 247, 0.5);
+}

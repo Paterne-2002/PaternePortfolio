@@ -1,0 +1,46 @@
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+/* ==========================================================================
+   SCROLL SNAP POUR CENTRER LES SECTIONS
+   ========================================================================== */
+
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
+body {
+  scroll-snap-type: y mandatory;
+}
+
+/* Centrer chaque section lors du scroll */
+section {
+  scroll-snap-align: center;
+  min-height: 100vh;
+}
+
+/* Ajuster la hauteur des sections pour un meilleur centrage */
+.home {
+  min-height: 100vh;
+}
+
+.about {
+  min-height: 100vh;
+}
+
+.experience {
+  min-height: 100vh;
+}
+
+.projet {
+  min-height: 100vh;
+}
+
+.contact {
+  min-height: 100vh;
+}

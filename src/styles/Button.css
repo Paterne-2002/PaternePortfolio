@@ -1,0 +1,37 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 30px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: inherit;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.btn--primary {
+  background: linear-gradient(135deg, #646cff, #a855f7);
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(100, 108, 255, 0.35);
+}
+
+.btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(100, 108, 255, 0.5);
+}
+
+.btn--outline {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.btn--outline:hover {
+  border-color: #a855f7;
+  color: #fff;
+  transform: translateY(-2px);
+}
