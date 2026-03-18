@@ -104,7 +104,7 @@ export default function Home() {
             Me contacter
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="16" height="16"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </Button>
-          <Button href="/assets/cv.pdf" variant="outline" download>
+          <Button href="/assets/CVPaterne.pdf" variant="outline" download>
             Télécharger CV  
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="16" height="16"><path d="M4 20h16M12 4v12m0 0l-6-6m6 6l6-6" strokeLinecap="round" strokeLinejoin="round"/></svg>
           </Button>
