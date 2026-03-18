@@ -116,9 +116,9 @@
 }
 
 .home__name {
-  font-size: clamp(1.8rem, 5vw, 3.5rem);
-  font-weight: 700;
-  margin-bottom: clamp(0.5rem, 1.5vw, 1rem);
+  font-size: clamp(0.9rem, 2.5vw, 1.75rem);
+  font-weight: 600;
+  margin-bottom: clamp(0.25rem, 0.75vw, 0.5rem);
   line-height: 1.2;
 }
 
@@ -132,7 +132,7 @@
 
 .home__role-wrapper {
   font-size: clamp(1.2rem, 3vw, 2.5rem);
-  font-weight: 600;
+  font-weight: 700;
   color: var(--color-text-muted);
   margin-bottom: clamp(1rem, 2vw, 2rem);
   min-height: 1.5em;
