@@ -48,6 +48,16 @@ export default function Projet() {
                       Code source
                     </a>
                   )}
+                  {project.demo && (
+    <a
+      className="projet__btn projet__btn--primary"
+      href={project.demo}
+      target="_blank"
+      rel="noreferrer"
+    >
+      Demo
+    </a>
+  )}
                 </div>
               </div>
             </article>
