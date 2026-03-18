@@ -1,11 +1,17 @@
-/* Home section styles */
+/* Home section styles - Version avec anneaux adaptés au format portrait */
+
+:root {
+  --mobile-padding: 1rem;
+  --tablet-padding: 2rem;
+  --desktop-padding: 10%;
+}
 
 .home {
   position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 6rem 10%;
+  padding: 6rem var(--desktop-padding);
   overflow: hidden;
   background: #07071a;
 }
@@ -14,7 +20,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
   width: 100%;
   position: relative;
@@ -22,6 +28,7 @@
   gap: 5rem;
 }
 
+/* Éléments décoratifs */
 .home__blob {
   position: absolute;
   border-radius: 50%;
@@ -31,24 +38,23 @@
 }
 
 .home__blob--1 {
-  width: 300px;
-  height: 300px;
+  width: min(300px, 40vw);
+  height: min(300px, 40vw);
   top: 10%;
   left: -10%;
-  animation-delay: 0s;
 }
 
 .home__blob--2 {
-  width: 200px;
-  height: 200px;
+  width: min(200px, 30vw);
+  height: min(200px, 30vw);
   bottom: 20%;
   right: -5%;
   animation-delay: 2s;
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
 }
 
 .home__grid {
@@ -60,14 +66,14 @@
   background-image:
     linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-  background-size: 50px 50px;
+  background-size: min(50px, 5vw) min(50px, 5vw);
   z-index: -1;
 }
 
 .home__particle {
   position: absolute;
-  width: 4px;
-  height: 4px;
+  width: clamp(2px, 4px, 6px);
+  height: clamp(2px, 4px, 6px);
   background: var(--color-primary);
   border-radius: 50%;
   animation: particleFloat 8s ease-in-out infinite;
@@ -81,10 +87,11 @@
 .home__particle--6 { top: 50%; left: 90%; animation-delay: 5s; }
 
 @keyframes particleFloat {
-  0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.5; }
-  50% { transform: translateY(-30px) rotate(180deg); opacity: 1; }
+  0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.3; }
+  50% { transform: translateY(-30px) rotate(180deg); opacity: 0.8; }
 }
 
+/* Contenu principal */
 .home__content {
   flex: 1;
   max-width: 600px;
@@ -92,25 +99,27 @@
 }
 
 .home__greeting {
-  font-size: 1.2rem;
+  font-size: clamp(0.9rem, 1.2vw, 1.2rem);
   color: var(--color-text-muted);
-  margin-bottom: var(--spacing-md);
+  margin-bottom: clamp(0.5rem, 1vw, 1rem);
   display: flex;
   align-items: center;
-  gap: var(--spacing-md);
+  gap: clamp(0.5rem, 1vw, 1rem);
+  flex-wrap: wrap;
 }
 
 .home__greeting-line {
-  width: 40px;
+  width: clamp(30px, 4vw, 40px);
   height: 2px;
   background: var(--color-primary);
+  flex-shrink: 0;
 }
 
 .home__name {
-  font-size: 2rem;
-  font-weight: 400;
-  margin-bottom: var(--spacing-md);
-  line-height: 1.1;
+  font-size: clamp(1.8rem, 5vw, 3.5rem);
+  font-weight: 700;
+  margin-bottom: clamp(0.5rem, 1.5vw, 1rem);
+  line-height: 1.2;
 }
 
 .home__name-line {
@@ -122,14 +131,15 @@
 }
 
 .home__role-wrapper {
-  font-size: 2.5rem;
-  font-weight: 800;
+  font-size: clamp(1.2rem, 3vw, 2.5rem);
+  font-weight: 600;
   color: var(--color-text-muted);
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: clamp(1rem, 2vw, 2rem);
   min-height: 1.5em;
   display: flex;
   align-items: center;
   gap: 2px;
+  flex-wrap: wrap;
 }
 
 .home__role {
@@ -138,6 +148,7 @@
 
 .home__cursor {
   animation: blink 1s infinite;
+  font-weight: 300;
 }
 
 @keyframes blink {
@@ -145,28 +156,30 @@
   51%, 100% { opacity: 0; }
 }
 
+/* Section sociale */
 .home__socials {
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: clamp(1rem, 2vw, 2rem);
 }
 
 .home__socials-label {
   display: block;
-  font-size: 0.9rem;
+  font-size: clamp(0.8rem, 0.9vw, 0.9rem);
   color: var(--color-text-muted);
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: clamp(0.5rem, 1vw, 0.8rem);
 }
 
 .home__socials-icons {
   display: flex;
-  gap: var(--spacing-md);
+  gap: clamp(0.5rem, 1vw, 1rem);
+  flex-wrap: wrap;
 }
 
 .home__social-link {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: clamp(35px, 5vw, 40px);
+  height: clamp(35px, 5vw, 40px);
   border-radius: 50%;
   background: rgba(255,255,255,0.1);
   color: var(--color-text);
@@ -175,124 +188,343 @@
 
 .home__social-link:hover {
   background: var(--color-primary);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
 }
 
+.home__social-link svg {
+  width: clamp(18px, 2.5vw, 22px);
+  height: clamp(18px, 2.5vw, 22px);
+}
+
+/* Boutons CTA */
 .home__ctas {
   display: flex;
-  gap: var(--spacing-md);
+  gap: clamp(0.8rem, 1.5vw, 1.5rem);
   flex-wrap: wrap;
 }
 
+.home__ctas .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: clamp(0.6rem, 1.5vw, 1rem) clamp(1rem, 2vw, 1.8rem);
+  font-size: clamp(0.9rem, 1.1vw, 1rem);
+}
+
+.home__ctas .btn svg {
+  width: clamp(14px, 1.8vw, 18px);
+  height: clamp(14px, 1.8vw, 18px);
+}
+
+/* Photo et anneaux - Version portrait */
 .home__photo {
   position: relative;
   flex-shrink: 0;
   z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.home__photo-ring {
-  position: absolute;
-  border-radius: 50%;
-  border: 2px solid var(--color-primary);
-  animation: rotate 20s linear infinite;
-}
-
+/* Anneaux extérieur - Format ovale portrait */
 .home__photo-ring--outer {
-  width: 300px;
-  height: 300px;
+  position: absolute;
+  width: clamp(280px, 30vw, 350px);
+  height: clamp(360px, 40vw, 450px);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  animation-delay: 0s;
+  border: 2px solid var(--color-primary);
+  border-radius: 20px; /* Coins arrondis pour correspondre à l'image */
+  animation: rotate-portrait 20s linear infinite;
+  opacity: 0.6;
+  box-shadow: 0 0 20px rgba(100, 108, 255, 0.3);
 }
 
+/* Anneaux intérieur - Format ovale portrait */
 .home__photo-ring--inner {
-  width: 250px;
-  height: 250px;
+  position: absolute;
+  width: clamp(240px, 25vw, 310px);
+  height: clamp(320px, 35vw, 410px);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  animation-delay: -10s;
+  border: 2px solid var(--color-primary);
+  border-radius: 15px; /* Coins légèrement moins arrondis */
+  animation: rotate-portrait 15s linear infinite reverse;
+  opacity: 0.8;
+  box-shadow: 0 0 15px rgba(100, 108, 255, 0.4);
+  border-style: dotted; /* Style différent pour l'anneau intérieur */
 }
 
-@keyframes rotate {
-  from { transform: translate(-50%, -50%) rotate(0deg); }
-  to { transform: translate(-50%, -50%) rotate(360deg); }
+/* Animation de rotation adaptée au format portrait */
+@keyframes rotate-portrait {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
 
+/* Effet de brillance */
 .home__photo-glow {
   position: absolute;
-  width: 220px;
-  height: 220px;
+  width: clamp(220px, 24vw, 300px);
+  height: clamp(300px, 34vw, 400px);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: radial-gradient(circle, rgba(100, 108, 255, 0.3) 0%, transparent 70%);
-  border-radius: 50%;
-  animation: pulse 3s ease-in-out infinite;
+  background: radial-gradient(circle, rgba(100, 108, 255, 0.2) 0%, transparent 70%);
+  border-radius: 15px;
+  animation: pulse-portrait 3s ease-in-out infinite;
+  filter: blur(5px);
 }
 
-@keyframes pulse {
-  0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
-  50% { opacity: 1; transform: translate(-50%, -50%) scale(1.05); }
+@keyframes pulse-portrait {
+  0%, 100% { 
+    opacity: 0.3; 
+    transform: translate(-50%, -50%) scale(1); 
+  }
+  50% { 
+    opacity: 0.6; 
+    transform: translate(-50%, -50%) scale(1.05); 
+  }
 }
 
+/* Placeholder de l'image */
 .home__photo-placeholder {
-  width: 300px;   /* taille plus grande */
-  height: 400px;  /* forme verticale type portrait */
-  border-radius: 12px; /* coins légèrement arrondis, mais pas rond */
+  width: clamp(220px, 24vw, 300px);
+  height: clamp(300px, 34vw, 400px);
+  border-radius: 12px;
   overflow: hidden;
   position: relative;
   z-index: 3;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4); /* effet élégant pour portfolio */
+  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+  transition: all 0.3s ease;
+}
+
+.home__photo-placeholder:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 45px rgba(100, 108, 255, 0.3);
 }
 
 .home__photo-placeholder img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* garde une belle proportion */
+  object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
+.home__photo-placeholder:hover img {
+  transform: scale(1.08);
+}
 
-/* Responsive */
+/* Breakpoints responsives */
+@media (max-width: 1024px) {
+  .home {
+    padding: 5rem var(--tablet-padding);
+  }
+  
+  .home__inner {
+    gap: 3rem;
+  }
+}
+
 @media (max-width: 768px) {
   .home {
+    padding: 4rem var(--mobile-padding);
+    min-height: auto;
+  }
+
+  .home__inner {
     flex-direction: column;
+    gap: 2.5rem;
     text-align: center;
-    padding: 6rem 10%;
+  }
+
+  .home__content {
+    max-width: 100%;
+  }
+
+  .home__greeting {
+    justify-content: center;
+  }
+
+  .home__socials-icons {
+    justify-content: center;
+  }
+
+  .home__ctas {
+    justify-content: center;
+  }
+
+  .home__photo {
+    order: -1;
+    margin-bottom: 1rem;
+  }
+
+  /* Ajustement des anneaux pour tablette */
+  .home__photo-ring--outer {
+    width: 240px;
+    height: 300px;
+  }
+
+  .home__photo-ring--inner {
+    width: 210px;
+    height: 270px;
+  }
+
+  .home__photo-glow {
+    width: 200px;
+    height: 260px;
+  }
+
+  .home__photo-placeholder {
+    width: 200px;
+    height: 260px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home {
+    padding: 3rem var(--mobile-padding);
+  }
+
+  .home__name {
+    font-size: 1.8rem;
+  }
+
+  .home__role-wrapper {
+    font-size: 1.2rem;
+    justify-content: center;
+  }
+
+  /* Ajustement des anneaux pour mobile */
+  .home__photo-ring--outer {
+    width: 190px;
+    height: 240px;
+    border-width: 1.5px;
+  }
+
+  .home__photo-ring--inner {
+    width: 165px;
+    height: 215px;
+    border-width: 1.5px;
+  }
+
+  .home__photo-glow {
+    width: 155px;
+    height: 205px;
+  }
+
+  .home__photo-placeholder {
+    width: 155px;
+    height: 205px;
+  }
+
+  .home__ctas {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.8rem;
+  }
+
+  .home__ctas .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .home__socials-icons {
+    gap: 0.8rem;
+  }
+}
+
+@media (max-width: 360px) {
+  /* Ajustement des anneaux pour très petits écrans */
+  .home__photo-ring--outer {
+    width: 160px;
+    height: 200px;
+  }
+
+  .home__photo-ring--inner {
+    width: 140px;
+    height: 180px;
+  }
+
+  .home__photo-glow {
+    width: 130px;
+    height: 170px;
+  }
+
+  .home__photo-placeholder {
+    width: 130px;
+    height: 170px;
   }
 
   .home__name {
     font-size: 1.5rem;
   }
+}
 
-  .home__role-wrapper {
-    font-size: 2rem;
-    font-weight: 800;
+/* Support des écrans très hauts */
+@media (min-height: 900px) and (min-width: 769px) {
+  .home {
+    min-height: 100vh;
   }
-
-  .home__photo {
-    margin-top: var(--spacing-lg);
-  }
-
-  .home__photo-ring--outer,
-  .home__photo-ring--inner {
-    width: 250px;
-    height: 250px;
+  
+  .home__photo-ring--outer {
+    width: 350px;
+    height: 450px;
   }
 
   .home__photo-ring--inner {
-    width: 200px;
-    height: 200px;
-  }
-
-  .home__photo-glow {
-    width: 180px;
-    height: 180px;
+    width: 310px;
+    height: 410px;
   }
 
   .home__photo-placeholder {
-    width: 160px;
-    height: 160px;
+    width: 300px;
+    height: 400px;
+  }
+}
+
+/* Préférences de réduction de mouvement */
+@media (prefers-reduced-motion: reduce) {
+  .home__blob,
+  .home__particle,
+  .home__photo-ring--outer,
+  .home__photo-ring--inner,
+  .home__photo-glow,
+  .home__photo-placeholder,
+  .home__social-link {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  .home__photo-placeholder:hover {
+    transform: none;
+  }
+}
+
+/* Mode clair */
+@media (prefers-color-scheme: light) {
+  .home {
+    background: #f5f5f7;
+  }
+  
+  .home__social-link {
+    background: rgba(0,0,0,0.05);
+  }
+  
+  .home__grid {
+    background-image:
+      linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
+  }
+  
+  .home__photo-ring--outer,
+  .home__photo-ring--inner {
+    border-color: var(--color-primary);
+    opacity: 0.4;
   }
 }
