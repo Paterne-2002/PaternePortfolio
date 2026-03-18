@@ -118,7 +118,7 @@ export default function Home() {
         <div className="home__photo-ring home__photo-ring--inner" />
         <div className="home__photo-glow" />
         <div className="home__photo-placeholder">
-          <img src="/assets/paterne.jpg" alt="Paterne" />
+          <img src="/PaternePortfolio/assets/paterne.jpg" alt="Paterne" />
         </div>
       </div>
       </div>

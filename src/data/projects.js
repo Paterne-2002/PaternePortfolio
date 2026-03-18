@@ -5,7 +5,7 @@ export const projects = [
     description: "Centre d'Apprivissionnement des Valeurs Postaux",
     tags: ["Django", "React", "PostgreSQL"],
     github: "https://github.com/Paterne-2002/CAVP",
-    image: "/assets/cavp.png",
+    image: "/PaternePortfolio/assets/cavp.png",
      demo: "http://paositramada.mg:8913/auth"
   },
   {
@@ -14,7 +14,7 @@ export const projects = [
     description: "Centre de Conrole des Mandats Postaux",
     tags: ["Django", "React", "PostgreSQL"],
     github: "https://github.com/Paterne-2002/CCM",
-    image: "/assets/CCM.png",
+    image: "/PaternePortfolio/assets/CCM.png",
     demo: "http://paositramada.mg:8912/"
   },
   {
@@ -23,7 +23,7 @@ export const projects = [
     description: "Gestion électronique des documents Administratifs au sein du Ministère de l'Intérieur et de la Décentralisation",
     tags: ["Laravel", "Vue.js","Inertia", "MySQL"],
     github: "https://github.com/",
-    image: "/assets/ged.png",
+    image: "/PaternePortfolio/assets/ged.png",
   },
      {
     id: 4,
@@ -31,7 +31,7 @@ export const projects = [
     description: "Développement et régulation de l'industrie aurifère nationale Malgache",
     tags: ["Node.js", "React", "MySQL"],
     github: "https://github.com/Paterne-2002/Anor",
-    image: "/assets/anor.png",
+    image: "/PaternePortfolio/assets/anor.png",
   },
    {
     id: 5,
@@ -39,7 +39,7 @@ export const projects = [
     description: "Application de gestion des archives au sein du Ministère de l'Education Nationale",
     tags: ["Codeigniter", "Ajax", "MySQL"],
     github: "https://github.com/",
-    image: "/assets/archive.png",
+    image: "/PaternePortfolio/assets/archive.png",
   },
 
 ];
