@@ -99,7 +99,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="home__ctas">
+        <div className="home__ctas">  
           <Button href="#contact" variant="primary">
             Me contacter
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="16" height="16"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -118,7 +118,7 @@ export default function Home() {
         <div className="home__photo-ring home__photo-ring--inner" />
         <div className="home__photo-glow" />
         <div className="home__photo-placeholder">
-          <img src="assets/paterne.jpg" alt="Paterne" />
+          <img src="/assets/paterne.jpg" alt="Paterne" />
         </div>
       </div>
       </div>
